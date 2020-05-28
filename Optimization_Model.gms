@@ -108,9 +108,11 @@ rad_infl the dispersal thresholds or radius of influences to cycle through /r4/
 Alias (j, i);
 
 
-$CALL gdxxrw.exe I=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\INPUT.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT.gdx par=distance rng=distance!A1:MK349 Rdim=1 Cdim=1  par=cost rng=cost!A1:B348 Rdim=1 par=penalty rng=penalty!A1:MK349 Rdim=1 Cdim=1 par=A rng=A!A1:M349 Rdim=1 Cdim=1  par=economic_costs rng=economic!A1:N349 Rdim=1 Cdim=1   par=dam_costs rng=economic_cost!A1:N349 Rdim=1 Cdim=1 par=links rng=links!A1:MK349 Rdim=1 Cdim=1 par= IICnum_month rng=IICnum_month!A1:B12 Rdim=1 par= objweights rng=weights!A1:B48 Rdim=1 par=habitat rng= habitat!A1:M349 Rdim=1 Cdim=1 par=Rem_budget rng= bud_scenarios!A1:B26 Rdim =1  par= R rng=R!A1:B5 Rdim=1 par= area rng = area!A1:L2 Cdim=1 par=trib rng=trib!A1:MK349 Cdim=1 Rdim=1
+*$CALL gdxxrw.exe I=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\INPUT.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT.gdx par=distance rng=distance!A1:MK349 Rdim=1 Cdim=1  par=cost rng=cost!A1:B348 Rdim=1 par=penalty rng=penalty!A1:MK349 Rdim=1 Cdim=1 par=A rng=A!A1:M349 Rdim=1 Cdim=1  par=economic_costs rng=economic!A1:N349 Rdim=1 Cdim=1   par=dam_costs rng=economic_cost!A1:N349 Rdim=1 Cdim=1 par=links rng=links!A1:MK349 Rdim=1 Cdim=1 par= IICnum_month rng=IICnum_month!A1:B12 Rdim=1 par= objweights rng=weights!A1:B48 Rdim=1 par=habitat rng= habitat!A1:M349 Rdim=1 Cdim=1 par=Rem_budget rng= bud_scenarios!A1:B26 Rdim =1  par= R rng=R!A1:B5 Rdim=1 par= area rng = area!A1:L2 Cdim=1 par=trib rng=trib!A1:MK349 Cdim=1 Rdim=1
+$CALL gdxxrw.exe I=INPUT.xlsx O=INPUT.gdx par=distance rng=distance!A1:MK349 Rdim=1 Cdim=1  par=cost rng=cost!A1:B348 Rdim=1 par=penalty rng=penalty!A1:MK349 Rdim=1 Cdim=1 par=A rng=A!A1:M349 Rdim=1 Cdim=1  par=economic_costs rng=economic!A1:N349 Rdim=1 Cdim=1   par=dam_costs rng=economic_cost!A1:N349 Rdim=1 Cdim=1 par=links rng=links!A1:MK349 Rdim=1 Cdim=1 par= IICnum_month rng=IICnum_month!A1:B12 Rdim=1 par= objweights rng=weights!A1:B48 Rdim=1 par=habitat rng= habitat!A1:M349 Rdim=1 Cdim=1 par=Rem_budget rng= bud_scenarios!A1:B26 Rdim =1  par= R rng=R!A1:B5 Rdim=1 par= area rng = area!A1:L2 Cdim=1 par=trib rng=trib!A1:MK349 Cdim=1 Rdim=1
 
-$CALL gdxxrw.exe I=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\INPUT_PATH_UP.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT_PATH_UP.gdx par=path_up rng=path_up!A1:ML121105 Rdim=2 Cdim=1
+*$CALL gdxxrw.exe I=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\INPUT_PATH_UP.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT_PATH_UP.gdx par=path_up rng=path_up!A1:ML121105 Rdim=2 Cdim=1
+$CALL gdxxrw.exe I=INPUT_PATH_UP.xlsx O=INPUT_PATH_UP.gdx par=Sheet1 rng=path_up!A1:ML121105 Rdim=2 Cdim=1
 
 ;
 *the parameters imported from excel
@@ -130,7 +132,8 @@ Parameter R(rad_infl)     ;
 Parameter area(months) the total quality weighted habitat area by month ;
 Parameter trib(i,j) giving the tributary reaches a bonus ;
 
-$GDXIN C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT.gdx
+*$GDXIN C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT.gdx
+$GDXIN INPUT.gdx
 $LOAD cost
 $LOAD links
 $LOAD penalty
@@ -148,7 +151,8 @@ $LOAD trib
 
 $GDXIN
 
-$GDXIN C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT_PATH_UP.gdx
+*$GDXIN C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT_PATH_UP.gdx
+$GDXIN INPUT_PATH_UP.gdx
 $LOAD path_up
 $GDXIN
 
