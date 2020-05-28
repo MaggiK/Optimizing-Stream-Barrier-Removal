@@ -47,7 +47,7 @@ library(writexl)
  colnames(dfAll) <- cColHeadsClean
  
  #Write out combined to CSV (incase)
- write.csv(dfAll,"INPUT_PATH_UP.csv")
+ write.csv(dfAll,"INPUT_PATH_UP.csv", row.names=FALSE, quote=FALSE)
  #Write out to excel
  writexl::write_xlsx(dfAll, "INPUT_PATH_UP.xlsx")
  
