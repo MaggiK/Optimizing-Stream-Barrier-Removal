@@ -1,0 +1,19 @@
+[PROJECT]
+
+[RP:JUNE_2018 -2PERIODS_DAILYCV]
+1=
+
+[RP:OPTIMIZATION_MODEL]
+1=
+
+[OPENWINDOW_1]
+FILE0=C:\Rosenberg\Work\USU\Students\__Finished\KraftMaggi\GitHub\Optimizing-Stream-Barrier-Removal\Optimization_Model.gms
+FILE1=C:\Rosenberg\Work\USU\Students\__Finished\KraftMaggi\GitHub\Optimizing-Stream-Barrier-Removal\Optimization_Model.lst
+FILE2=C:\Rosenberg\Work\USU\Students\RindMoazzam\Repositories\-Bug-flow-\Model_Troubleshooting\June_2018 -2periods_30days.gms
+FILE3=C:\Rosenberg\Work\USU\Students\RindMoazzam\Repositories\-Bug-flow-\Model_Troubleshooting\June2018_newobj_troubleshooting\June_newobjanalysis.gms
+FILE4=C:\Rosenberg\Work\USU\Students\RindMoazzam\Repositories\-Bug-flow-\Model_Troubleshooting\June2018_newobj_troubleshooting\June_newobjanalysis.gms
+MAXIM=1
+TOP=105
+LEFT=1024
+HEIGHT=400
+WIDTH=400
