@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589824059894.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A07B4582",
+    "lastKnownWriteTime" : 3419473789575321445,
+    "last_content_update" : 1589824059894,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7275D717",
+        "caption" : "dfAll",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dfAll&cache_key=7275D717",
+        "displayedObservations" : "121104",
+        "environment" : "",
+        "object" : "dfAll",
+        "preview" : "0",
+        "totalObservations" : "121104",
+        "variables" : "350"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

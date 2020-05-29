@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589823100741.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "863498836",
+    "id" : "142B7EC3",
+    "lastKnownWriteTime" : 1590641628,
+    "last_content_update" : 1590641628541,
+    "path" : "C:/Rosenberg/Work/USU/Students/__Finished/KraftMaggi/GitHub/Optimizing-Stream-Barrier-Removal/CombineInputPaths.R",
+    "project_path" : "CombineInputPaths.R",
+    "properties" : {
+        "cursorPosition" : "49,67",
+        "scrollLine" : "35",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
