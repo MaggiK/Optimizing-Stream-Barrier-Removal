@@ -50,8 +50,8 @@ library(writexl)
  write.csv(dfAll,"INPUT_PATH_UP.csv", row.names=FALSE, quote=FALSE)
  
  #Write out to excel
- #writexl::write_xlsx(dfAll, "INPUT_PATH_UP.xlsx")
+ writexl::write_xlsx(dfAll, "INPUT_PATH_UP.xlsx")
  #Write out to one folder up
- writexl::write_xlsx(dfAll, "../INPUT_PATH_UP.xlsx")
+ #writexl::write_xlsx(dfAll, "../INPUT_PATH_UP.xlsx")
  
  
