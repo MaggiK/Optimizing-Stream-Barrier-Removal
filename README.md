@@ -43,7 +43,7 @@ Additional descriptions of variables are available in the GAMS file.
 1. Open the file Optimization_Model.gms.
 1. Select the Run icon or press F9
 1. GAMS will solve ~ 1*3*15*1 = 45 scenarios (about 12 hours or more of run time) the program will spit out a bunch of output .gdx and .xlsx files with the names barriers_revomoved.xlsx, Results.xlsx, etc. that are the output
-1. To test everything works on just 1 run, comment out the line Loop((mn, w, scenarios, rad_infl),   [add a * at the beginning] and uncomment the line two below. 
+1. To test everything works on just 1 run, comment out line 248 (a LOOP all statement), and uncomment line 250 (A conditional LOOP statement for one run). 
 1. Postprocessing - more forecoming
 
 ### Recommended Citation
