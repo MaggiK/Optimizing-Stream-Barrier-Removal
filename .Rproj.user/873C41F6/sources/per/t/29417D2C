@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589824053626.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "29417D2C",
+    "lastKnownWriteTime" : 7811852486011339622,
+    "last_content_update" : 1589824053626,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "59700C0C",
+        "caption" : "dfCurrFile",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dfCurrFile&cache_key=59700C0C",
+        "displayedObservations" : "31105",
+        "environment" : "",
+        "object" : "dfCurrFile",
+        "preview" : "0",
+        "totalObservations" : "31105",
+        "variables" : "350"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
