@@ -108,11 +108,11 @@ rad_infl the dispersal thresholds or radius of influences to cycle through /r4/
 Alias (j, i);
 
 
-*$CALL gdxxrw.exe I=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\INPUT.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT.gdx par=distance rng=distance!A1:MK349 Rdim=1 Cdim=1  par=cost rng=cost!A1:B348 Rdim=1 par=penalty rng=penalty!A1:MK349 Rdim=1 Cdim=1 par=A rng=A!A1:M349 Rdim=1 Cdim=1  par=economic_costs rng=economic!A1:N349 Rdim=1 Cdim=1   par=dam_costs rng=economic_cost!A1:N349 Rdim=1 Cdim=1 par=links rng=links!A1:MK349 Rdim=1 Cdim=1 par= IICnum_month rng=IICnum_month!A1:B12 Rdim=1 par= objweights rng=weights!A1:B48 Rdim=1 par=habitat rng= habitat!A1:M349 Rdim=1 Cdim=1 par=Rem_budget rng= bud_scenarios!A1:B26 Rdim =1  par= R rng=R!A1:B5 Rdim=1 par= area rng = area!A1:L2 Cdim=1 par=trib rng=trib!A1:MK349 Cdim=1 Rdim=1
+*$CALL gdxxrw.exe I=INPUT.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT.gdx par=distance rng=distance!A1:MK349 Rdim=1 Cdim=1  par=cost rng=cost!A1:B348 Rdim=1 par=penalty rng=penalty!A1:MK349 Rdim=1 Cdim=1 par=A rng=A!A1:M349 Rdim=1 Cdim=1  par=economic_costs rng=economic!A1:N349 Rdim=1 Cdim=1   par=dam_costs rng=economic_cost!A1:N349 Rdim=1 Cdim=1 par=links rng=links!A1:MK349 Rdim=1 Cdim=1 par= IICnum_month rng=IICnum_month!A1:B12 Rdim=1 par= objweights rng=weights!A1:B48 Rdim=1 par=habitat rng= habitat!A1:M349 Rdim=1 Cdim=1 par=Rem_budget rng= bud_scenarios!A1:B26 Rdim =1  par= R rng=R!A1:B5 Rdim=1 par= area rng = area!A1:L2 Cdim=1 par=trib rng=trib!A1:MK349 Cdim=1 Rdim=1
 $CALL gdxxrw.exe I=INPUT.xlsx O=INPUT.gdx par=distance rng=distance!A1:MK349 Rdim=1 Cdim=1  par=cost rng=cost!A1:B348 Rdim=1 par=penalty rng=penalty!A1:MK349 Rdim=1 Cdim=1 par=A rng=A!A1:M349 Rdim=1 Cdim=1  par=economic_costs rng=economic!A1:N349 Rdim=1 Cdim=1   par=dam_costs rng=economic_cost!A1:N349 Rdim=1 Cdim=1 par=links rng=links!A1:MK349 Rdim=1 Cdim=1 par= IICnum_month rng=IICnum_month!A1:B12 Rdim=1 par= objweights rng=weights!A1:B48 Rdim=1 par=habitat rng= habitat!A1:M349 Rdim=1 Cdim=1 par=Rem_budget rng= bud_scenarios!A1:B26 Rdim =1  par= R rng=R!A1:B5 Rdim=1 par= area rng = area!A1:L2 Cdim=1 par=trib rng=trib!A1:MK349 Cdim=1 Rdim=1
 
-*$CALL gdxxrw.exe I=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\INPUT_PATH_UP.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT_PATH_UP.gdx par=path_up rng=path_up!A1:ML121105 Rdim=2 Cdim=1
-$CALL gdxxrw.exe I=INPUT_PATH_UP.xlsx O=INPUT_PATH_UP.gdx par=sheet1 rng=path_up!A1:ML121105 Rdim=2 Cdim=1
+*$CALL gdxxrw.exe I=INPUT_PATH_UP.xlsx O=C:\Users\Maggi\Documents\WEBER\GAMS\2_GDX\INPUT_PATH_UP.gdx par=path_up rng=path_up!A1:ML121105 Rdim=2 Cdim=1
+$CALL gdxxrw.exe I=INPUT_PATH_UP.xlsx O=INPUT_PATH_UP.gdx par=Sheet1 rng=path_up!A1:ML121105 Rdim=2 Cdim=1
 
 ;
 *the parameters imported from excel
@@ -245,7 +245,9 @@ qual..                     QU =E=sum((k), HABITAT_months.L(k) * B(k)) ;
 ALIAS(months, mn) ;
 
 MODEL CONNECTIVITY /All/
-Loop((mn, w, scenarios, rad_infl),
+*Loop((mn, w, scenarios, rad_infl),
+*Only run the first loop
+Loop((mn, w, scenarios, rad_infl)$((ord(mn) eq 1) and (ord(w) eq 1) and (ord(scenarios) eq 1) and (ord(rad_infl) eq 1)),
 *change to Loop((scenarios,months),
          BUDGET.L = Rem_Budget(scenarios)   ;
          WT.L = objweights(w) ;
@@ -283,22 +285,22 @@ Display ObjFunc, Barriers_Removed, spent, CR_upstream,  dam_economic_loss  ;
 
 
 *unload results into excel- note: I need multiple excel documents for space reasons
-execute_unload "C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\Results.gdx", ObjFunc   ;
-execute_unload  "C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\economicloss.gdx", dam_economic_loss  ;
-execute_unload  "C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\reaches.gdx", CR_upstream  ;
-execute_unload  "C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\quality_length.gdx", quality_length  ;
-execute_unload "C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\barriers_removed.gdx", Barriers_Removed  ;
-execute_unload "C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\spent.gdx",  spent         ;
+execute_unload "Results.gdx", ObjFunc   ;
+execute_unload  "economicloss.gdx", dam_economic_loss  ;
+execute_unload  "reaches.gdx", CR_upstream  ;
+execute_unload  "quality_length.gdx", quality_length  ;
+execute_unload "barriers_removed.gdx", Barriers_Removed  ;
+execute_unload "spent.gdx",  spent         ;
 
 
-Execute "gdxxrw.exe C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\barriers_removed.gdx O=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\barriers_removed.xlsx filter=1 par=Barriers_Removed.l rng=Barriers_Removed!A1" ;
+Execute "gdxxrw.exe barriers_removed.gdx O=barriers_removed.xlsx filter=1 par=Barriers_Removed.l rng=Barriers_Removed!A1" ;
 
-Execute "gdxxrw.exe C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\Results.gdx O=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\Results.xlsx filter=1 par=ObjFunc.l rng=ObjFunc!A1" ;
+Execute "gdxxrw.exe Results.gdx O=Results.xlsx filter=1 par=ObjFunc.l rng=ObjFunc!A1" ;
 
-Execute "gdxxrw.exe C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\quality_length.gdx O=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\quality_length.xlsx filter=1 par=Quality_Length.l rng=quality_length!A1" ;
+Execute "gdxxrw.exe quality_length.gdx O=quality_length.xlsx filter=1 par=Quality_Length.l rng=quality_length!A1" ;
 
-Execute "gdxxrw.exe C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\reaches.gdx O=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\reaches.xlsx filter=1 par=CR_upstream.l rng=reach!A1" ;
+Execute "gdxxrw.exe reaches.gdx O=reaches.xlsx filter=1 par=CR_upstream.l rng=reach!A1" ;
 
-Execute "gdxxrw.exe C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\economicloss.gdx O=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\economicloss.xlsx filter=1 par=dam_economic_loss.l rng=economic_loss!A1" ;
+Execute "gdxxrw.exe economicloss.gdx O=economicloss.xlsx filter=1 par=dam_economic_loss.l rng=economic_loss!A1" ;
 
-Execute "gdxxrw.exe C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\spent.gdx O=C:\Users\Maggi\Documents\WEBER\GAMS\1_Excel\spent.xlsx filter=1 par=spent.l rng=spent!A1"   ;
+Execute "gdxxrw.exe spent.gdx O=spent.xlsx filter=1 par=spent.l rng=spent!A1"   ;
