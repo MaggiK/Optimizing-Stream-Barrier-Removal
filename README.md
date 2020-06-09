@@ -49,4 +49,4 @@ Additional descriptions of variables are available in the GAMS file.
 ### Recommended Citation
 Kraft, M., Rosenberg, D. E., and Null, S. (2019). "Prioritizing Stream Barrier Removal to Maximize Connected Aquatic Habitat and Minimize Water Scarcity." Journal of the American Water Resources Association.
 	https://onlinelibrary.wiley.com/doi/pdf/10.1111/1752-1688.12718.
-	preprint: Forthcoming
+	preprint (MS thesis): https://digitalcommons.usu.edu/etd/6885/
