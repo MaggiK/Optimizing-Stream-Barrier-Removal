@@ -47,6 +47,8 @@ Additional descriptions of variables are available in the GAMS file.
 1. Postprocessing - more forecoming
 
 ### Recommended Citation
-Kraft, M., Rosenberg, D. E., and Null, S. (2019). "Prioritizing Stream Barrier Removal to Maximize Connected Aquatic Habitat and Minimize Water Scarcity." Journal of the American Water Resources Association.
+Kraft, M., Rosenberg, D.E., and Null, S.E. (2019). "Prioritizing Stream Barrier Removal to Maximize Connected Aquatic Habitat and Minimize Water Scarcity." Journal of the American Water Resources Association, 55(2), 382-400.
 	https://onlinelibrary.wiley.com/doi/pdf/10.1111/1752-1688.12718.
+	preprint (journal article): 
+	https://www.researchgate.net/publication/330328730_Prioritizing_Stream_Barrier_Removal_to_Maximize_Connected_Aquatic_Habitat_and_Minimize_Water_Scarcity
 	preprint (MS thesis): https://digitalcommons.usu.edu/etd/6885/
